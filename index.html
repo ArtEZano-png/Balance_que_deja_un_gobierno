@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>100 Logros del Gobierno del Cambio · Balance de Despedida 2022–2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul-deep:#082567;--azul:#0F52BA;--azul-pale:#B0C4DE;
+  --blanco:#F9F8FF;--oro:#d4a843;--oro-claro:#f0d68a;
+  --verde:#1D9E75;--rojo:#c8401d;--purp:#534AB7;
+  --bg:#060d1f;--card-bg:rgba(10,22,40,0.88);--muted:rgba(176,196,222,0.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--blanco);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 60% 50% at 10% 15%,rgba(15,82,186,0.18) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 60% at 90% 80%,rgba(212,168,67,0.09) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 40% at 50% 50%,rgba(29,158,117,0.06) 0%,transparent 70%);
+  pointer-events:none;z-index:0}
+.app{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:1.5rem 1rem 0}
+.header{display:flex;flex-direction:column;align-items:center;margin-bottom:1.5rem;animation:fadeDown .65s ease both}
+.marca{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--oro);margin-bottom:8px;opacity:.85}
+.logo-img{height:72px;width:auto;object-fit:contain;filter:drop-shadow(0 0 18px rgba(212,168,67,.25));margin-bottom:10px}
+.wa-pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;background:rgba(37,211,102,.10);border:1px solid rgba(37,211,102,.28);padding:4px 14px;border-radius:30px}
+.wa-pill a{color:#25D366;font-weight:700;text-decoration:none}
+.wa-pill a .wa-label{color:#fff;font-weight:500}
+.hero{text-align:center;margin-bottom:1.5rem;animation:fadeDown .65s ease .08s both}
+.hero-eyebrow{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--rojo);margin-bottom:8px}
+.hero-candidata{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,4vw,1.5rem);font-weight:700;color:var(--oro);letter-spacing:1px;margin-bottom:8px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,5vw,2.4rem);font-weight:900;line-height:1.1;margin-bottom:6px}
+.hero h1 em{font-style:italic;color:var(--oro)}
+.hero-sub{font-size:.9rem;color:var(--azul-pale);line-height:1.5}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:1.4rem;animation:fadeUp .7s ease .12s both}
+.metric{background:rgba(10,22,40,0.7);border:1px solid rgba(176,196,222,0.1);border-radius:10px;padding:10px 6px;text-align:center}
+.metric .num{font-size:20px;font-weight:600;color:var(--oro)}
+.metric .lbl{font-size:9px;color:var(--muted);margin-top:2px;line-height:1.3}
+.narrativa{background:rgba(15,82,186,0.08);border:1px solid rgba(15,82,186,0.2);border-radius:14px;padding:16px 18px;margin-bottom:1.5rem;animation:fadeUp .7s ease .18s both}
+.narrativa p{font-family:'Playfair Display',serif;font-size:13px;color:var(--azul-pale);line-height:1.7;text-align:center}
+.tabs-wrap{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem;animation:fadeIn .8s ease .15s both}
+.tab-btn{font-size:10px;font-weight:500;padding:5px 10px;border-radius:20px;border:1px solid rgba(176,196,222,0.18);background:rgba(10,22,40,0.5);color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap;line-height:1.3}
+.tab-btn.active{color:var(--blanco);border-color:rgba(212,168,67,0.5);background:rgba(212,168,67,0.12)}
+.tab-btn:hover:not(.active){border-color:rgba(176,196,222,0.35);color:var(--azul-pale)}
+.panel{display:none}
+.panel.visible{display:block;animation:fadeUp .4s ease both}
+.aud-header{border-radius:14px;padding:14px 16px;margin-bottom:1rem;border:1px solid}
+.aud-eyebrow{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:5px}
+.aud-title{font-size:14px;font-weight:500;margin-bottom:6px;line-height:1.35}
+.aud-herida{font-size:12px;line-height:1.6;margin-bottom:8px}
+.aud-sep{height:0.5px;margin:8px 0;opacity:.3}
+.aud-clave-label{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.aud-clave{font-size:12px;font-weight:500;line-height:1.55}
+.hitos{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.hito{background:var(--card-bg);border:1px solid rgba(176,196,222,0.1);border-radius:12px;overflow:hidden;backdrop-filter:blur(8px)}
+.hito-head{display:flex;align-items:flex-start;gap:10px;padding:11px 14px 8px}
+.hito-badge{width:28px;height:28px;min-width:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;margin-top:1px;flex-shrink:0}
+.hito-titulo{font-size:12.5px;font-weight:500;color:var(--blanco);line-height:1.35;margin-bottom:2px}
+.hito-anio{font-size:10px;color:var(--muted)}
+.hito-body{padding:0 14px 12px 52px}
+.hito-relato{font-size:11.5px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.hito-guion{font-size:12px;font-weight:500;line-height:1.6;padding:9px 12px;border-left:2.5px solid;border-radius:0 7px 7px 0;margin-bottom:8px}
+.hito-preg{font-size:11px;padding:7px 10px;border-radius:8px;border:1px solid;line-height:1.5}
+.hito-preg strong{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:3px}
+.instruccion{border-radius:10px;padding:12px 14px;border:1px solid}
+.inst-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
+.inst-body{font-size:12px;line-height:1.6}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="marca">El ArtEZano De La Política</div>
+    <img src="https://i.imgur.com/twSFmew.png" alt="ALPHAS Consulting" class="logo-img">
+    <div class="wa-pill">
+      📱 <a href="https://wa.me/573193864348">
+        <span class="wa-label">WhatsApp</span> 3193864348
+      </a>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="hero-eyebrow">Gobierno del Cambio · 100 Logros · Colombia 2022–2026</div>
+    <div class="hero-candidata">Gustavo Petro · Presidente de Colombia · 2022–2026</div>
+    <h1>El balance que<br><em>deja un gobierno</em></h1>
+    <p class="hero-sub">Cuatro años de gobierno, documentados antes de que el ruido político los borre. Los números que verás aquí son reales y verificables.</p>
+  </div>
+  <div class="metrics">
+    <div class="metric"><div class="num">100</div><div class="lbl">logros verificables</div></div>
+    <div class="metric"><div class="num">4</div><div class="lbl">años de cambio real</div></div>
+    <div class="metric"><div class="num">793K</div><div class="lbl">salieron de la pobreza</div></div>
+    <div class="metric"><div class="num">9,2%</div><div class="lbl">desempleo más bajo del siglo</div></div>
+  </div>
+  <div class="narrativa">
+    <p>Este gobierno se despide, y antes de que el ruido político borre lo que pasó, queda este registro: lo que se construyó logro a logro, familia por familia, territorio por territorio. Estos no son titulares — son hechos verificables. Explora los logros que más te tocan según quién eres, y comparte los que te resuenen con alguien que merece conocerlos.</p>
+  </div>
+  <div class="tabs-wrap" id="tabs"></div>
+  <div id="panels"></div>
+  <div style="height:48px"></div>
+</div>
+<div style="position:fixed;bottom:0;left:0;right:0;text-align:center;padding:8px 24px;background:rgba(6,13,31,0.96);border-top:1px solid rgba(212,168,67,0.15);backdrop-filter:blur(10px);z-index:49;">
+  <p style="font-size:10px;color:rgba(176,196,222,0.45);letter-spacing:0.3px;line-height:1.5;">
+    © 2026 Esteban Zambrano · Licenciada bajo <strong style="color:rgba(176,196,222,0.65)">CC BY-ND 4.0</strong> · No se permite modificar ni eliminar este aviso ni el logotipo original.
+  </p>
+</div>
+<script>
+const AUD = [
+  {id:"trabajadores",label:"Trabajadores",
+   dark:"#993C1D",txt900:"#4A1B0C",txt800:"#712B13",bg:"#FAECE7",border:"#F0997B",guionBorder:"#D85A30",
+   titulo:"Trabajadores, empleados y obreros",
+   herida:"Llevan años con salarios que no alcanzan, sin derechos laborales reales y con miedo a perder el empleo. Sienten que el sistema está hecho para el que tiene plata, no para el que trabaja.",
+   clave:"Con trabajadores los logros deben ser concretos en pesos y en hechos. No promesas — cifras verificables en su bolsillo.",
+   hitos:[
+    {num:2,anio:"2022-2026",titulo:"Salario mínimo: hoy son $2 millones",relato:"El salario vital pasó a $2 millones, un incremento real y sostenido que le devuelve poder adquisitivo a millones de trabajadores.",guion:"Antes del cambio el salario mínimo no alcanzaba. Hoy son $2 millones. Eso no es un discurso — es plata en el bolsillo. Verificable en cualquier recibo de nómina.",pregunta:"¿Cuánto le rinde más el salario hoy comparado con hace cuatro años?"},
+    {num:3,anio:"Febrero 2026",titulo:"Desempleo más bajo del siglo: 9,2%",relato:"En febrero de 2026 la tasa de desempleo se ubicó en 9,2%, la cifra más baja registrada en Colombia en el siglo XXI.",guion:"9,2% de desempleo. El número más bajo de este siglo. No es casualidad — es el resultado de políticas que pusieron a trabajar a la gente en lugar de solo hablar de empleo.",pregunta:"¿Usted o alguien en su familia encontró trabajo en estos últimos tres años?"},
+    {num:6,anio:"2022-2026",titulo:"Jornada nocturna desde las 7 p.m. y recargos dominicales al 100%",relato:"Se recuperaron derechos laborales: la jornada nocturna inicia a las 7:00 p.m. y los recargos dominicales y festivos avanzan hacia el 100%.",guion:"Antes trabajabas de noche sin recargo. Trabajabas el domingo por casi nada. Eso cambió. Los derechos laborales no son favores — son obligaciones que este gobierno hizo cumplir.",pregunta:"¿Usted trabaja en horario nocturno o fines de semana? ¿Siente que ese esfuerzo extra es reconocido hoy?"},
+    {num:4,anio:"2025",titulo:"Pobreza multidimensional en un solo dígito: 9,9%",relato:"En 2025 bajamos la pobreza multidimensional a 9,9%, sacando a 793.000 colombianos de la pobreza en un año.",guion:"793.000 colombianos salieron de la pobreza en un solo año. Eso no es una estadística — eso es casi un millón de familias que ahora comen mejor, duermen mejor, viven mejor.",pregunta:"¿Usted siente que le alcanza más para vivir hoy que hace tres años?"},
+    {num:7,anio:"2022-2026",titulo:"377.000 contratos de aprendizaje SENA",relato:"Se logró el Contrato Laboral Especial y Término Fijo de Aprendizaje del SENA, llegando a más de 377 mil contratos a corte de diciembre.",guion:"377.000 personas con contrato de aprendizaje SENA. Jóvenes que antes no tenían cómo entrar al mercado laboral. Ahora tienen contrato, tienen experiencia, tienen futuro.",pregunta:"¿Usted o alguien que conoce accedió a formación del SENA en estos años?"},
+   ],
+   instruccion:"Con trabajadores empieza siempre por el logro 2 (salario) o el 3 (desempleo). Son los más verificables en la experiencia directa. La pregunta mayéutica debe anclar al bolsillo o al trabajo propio del interlocutor."},
+  {id:"mujeres",label:"Mujeres",
+   dark:"#993556",txt900:"#4B1528",txt800:"#72243E",bg:"#FBEAF0",border:"#ED93B1",guionBorder:"#D4537E",
+   titulo:"Mujeres — trabajadoras, cuidadoras y jefas de hogar",
+   herida:"Han cargado solas con el cuidado de la familia sin que el Estado lo reconozca. Trabajan doble — en la casa y afuera — y casi siempre invisibles para la política.",
+   clave:"Con mujeres los logros deben mostrar reconocimiento real del trabajo invisible. No discursos de género — plata, derechos y dignidad concreta.",
+   hitos:[
+    {num:11,anio:"2022-2026",titulo:"2.300 madres comunitarias vinculadas como empleadas públicas",relato:"2.300 madres comunitarias, sustitutas y trabajadoras de hogares infantiles fueron vinculadas como empleadas públicas, reconociendo la labor del cuidado.",guion:"2.300 mujeres que cuidaban a los hijos de todos y nadie les pagaba bien. Este gobierno las hizo empleadas públicas con prestaciones y todo. El cuidado dejó de ser invisible.",pregunta:"¿Usted conoce a alguna madre comunitaria? ¿Sabe lo que cambió para ellas?"},
+    {num:12,anio:"2022-2026",titulo:"Subsidio de sustitución pensional al 95%: 17.106 exmadres comunitarias",relato:"Se incrementó al 95% de un salario mínimo el subsidio de sustitución pensional, beneficiando a 17.106 exmadres comunitarias.",guion:"17.106 mujeres que dedicaron su vida a cuidar niños y nunca tuvieron pensión. Ahora reciben el 95% de un salario mínimo. Porque envejecer con dignidad no puede ser un privilegio.",pregunta:"¿Usted tiene pensión o algo que le garantice ingresos cuando no pueda trabajar?"},
+    {num:14,anio:"2022-2026",titulo:"Subsidio a 700.000 madres cabeza de hogar: de $160.000 a $500.000",relato:"Se incrementó de $160.000 a $500.000 el subsidio a 700.000 madres cabeza de hogar con hijos menores de seis años o en condición de discapacidad.",guion:"De $160.000 a $500.000 para 700.000 madres solas con hijos pequeños. Más del triple. Eso no es un subsidio — es reconocerle a una mujer que lucha sola que el Estado la ve.",pregunta:"¿Usted conoce a alguna mamá que esté sola criando sus hijos? ¿Cómo le va?"},
+    {num:13,anio:"2022-2026",titulo:"260 mujeres cabeza de familia: prisión por trabajo comunitario",relato:"Más de 260 mujeres cabeza de familia sustituyeron penas de prisión por trabajo comunitario, beneficiando a más de 700 personas de sus familias.",guion:"260 mujeres que iban a ir a la cárcel dejando a sus hijos solos. Este gobierno les dio trabajo comunitario en vez de rejas. Porque separar a una madre de sus hijos no es justicia — es castigo colectivo.",pregunta:"¿Usted cree que una madre sola merece las mismas oportunidades que cualquier otra persona?"},
+    {num:5,anio:"1994-1995",titulo:"Primer salario vital para internos de medicina",relato:"Por primera vez se gira un salario vital a los internos de medicina en Colombia, reconociendo el trabajo de quienes aprenden sirviendo.",guion:"Los médicos en internado trabajaban full time sin recibir salario. Este gobierno fue el primero en pagarles. Porque el trabajo siempre merece remuneración — sin excepción de título.",pregunta:"¿Usted cree que quien trabaja — sin importar si todavía está aprendiendo — merece que le paguen?"},
+   ],
+   instruccion:"Con mujeres empieza por el logro 11 o el 14. Son los que más resonancia tienen en la experiencia cotidiana. La pregunta debe conectar con alguien que conocen — no con ellas mismas directamente."},
+  {id:"campesinos",label:"Campesinos",
+   dark:"#3B6D11",txt900:"#173404",txt800:"#27500A",bg:"#EAF3DE",border:"#97C459",guionBorder:"#639922",
+   titulo:"Familias campesinas y trabajadores del campo",
+   herida:"Llevan generaciones sin tierra propia, sin apoyo estatal y viendo cómo el campo colombiano se vaciaba mientras las ciudades crecían. El Estado siempre llegó tarde o no llegó.",
+   clave:"Con campesinos los logros deben ser de tierra, de comida y de presencia estatal real. Nada abstracto — hectáreas, toneladas, municipios.",
+   hitos:[
+    {num:15,anio:"2022-2026",titulo:"Reforma agraria real: 2 millones de hectáreas formalizadas",relato:"Se formalizaron más de 2 millones de hectáreas entregando títulos históricos a campesinos y mujeres rurales.",guion:"2 millones de hectáreas con título en manos de campesinos y mujeres rurales. En Colombia eso nunca había pasado. La tierra dejó de ser un sueño — se convirtió en un papel con nombre propio.",pregunta:"¿Usted o su familia tienen escritura de la tierra que trabajan?"},
+    {num:16,anio:"2024-2025",titulo:"El agro creció 8% en 2024 — mejor cifra en 46 años",relato:"El sector agro creció 8% en 2024, su mejor cifra en 46 años, superando el crecimiento del PIB nacional de 2025.",guion:"El campo colombiano creció 8% en 2024. La mejor cifra en 46 años. Eso significa más plata, más empleo, más futuro para los que trabajan la tierra.",pregunta:"¿Usted siente que en los últimos años el campo ha tenido más apoyo que antes?"},
+    {num:17,anio:"2025",titulo:"Récord de alimentos: 7,5 millones de toneladas",relato:"En 2025 se registró un récord de 7,5 millones de toneladas de alimentos en mercados mayoristas y un promedio mensual de abastecimiento de 628 mil toneladas.",guion:"7,5 millones de toneladas de alimentos. El récord de este siglo. Eso es el campo colombiano produciendo — y este gobierno poniéndole las condiciones para lograrlo.",pregunta:"¿Usted ha notado que hay más variedad o disponibilidad de alimentos en los últimos años?"},
+    {num:23,anio:"2022-2026",titulo:"Inflación de alimentos: de 25,57% a 6,27%",relato:"La inflación de alimentos pasó de 25,57% en 2022 a 6,27% en marzo de 2026, reduciendo el costo de la canasta básica.",guion:"Los alimentos casi no habían subido de precio en este gobierno. La inflación de comida bajó de 25% a 6%. Eso se siente en el mercado, en la olla, en el bolsillo.",pregunta:"¿Usted siente que los alimentos subieron menos de precio en los últimos dos años?"},
+    {num:20,anio:"Enero 2026",titulo:"Empleo rural: 4,8 millones de personas — máximo desde 2001",relato:"En enero de 2026 el empleo en el sector rural colombiano alcanzó 4,8 millones de personas ocupadas, el nivel más alto para un mes de enero desde 2001.",guion:"4,8 millones de colombianos trabajando en el campo en enero de 2026. El número más alto desde 2001. El campo no está muriendo — está resucitando.",pregunta:"¿En su vereda hay más o menos trabajo disponible que hace cuatro años?"},
+   ],
+   instruccion:"Con campesinos empieza por el logro 15 (tierra) o el 23 (precios de alimentos). Son los que se viven en el día a día. La pregunta mayéutica debe anclar al territorio propio."},
+  {id:"jovenes",label:"Jóvenes",
+   dark:"#534AB7",txt900:"#26215C",txt800:"#3C3489",bg:"#EEEDFE",border:"#AFA9EC",guionBorder:"#7F77DD",
+   titulo:"Jóvenes entre 16 y 30 años",
+   herida:"Sienten que la Colombia que heredaron no fue hecha para ellos. Estudian pero no encuentran trabajo. Sueñan pero no ven opciones. Muchos miran para afuera.",
+   clave:"Con jóvenes los logros deben mostrar oportunidad concreta — educación, tecnología, deporte, cultura y paz. No discursos de esperanza — hechos de presente.",
+   hitos:[
+    {num:42,anio:"2022-2026",titulo:"$931.000 millones en Inteligencia Artificial y 983.000 personas formadas",relato:"Se invirtieron $931.000 millones en Inteligencia Artificial y se formó a 983.000 personas en habilidades digitales, ciberseguridad y datos.",guion:"983.000 colombianos formados en IA, datos y ciberseguridad. Este gobierno apostó por la economía del futuro cuando otros seguían hablando del pasado. Eso es construir oportunidades reales para los jóvenes.",pregunta:"¿Tú has tenido acceso a alguna formación digital o tecnológica en los últimos años?"},
+    {num:62,anio:"2022-2026",titulo:"Jóvenes en Paz: 30.000 chicos alejados de la guerra",relato:"Se implementó el programa Jóvenes en Paz que hoy aleja a más de 30.000 chicos de la guerra.",guion:"30.000 jóvenes que estaban en riesgo de entrar a grupos armados. Este gobierno les dio otra opción. Porque la guerra no es un destino — es el resultado de no tener opciones.",pregunta:"¿Tú conoces a algún joven que haya salido de una situación de riesgo por tener una oportunidad?"},
+    {num:44,anio:"2022-2026",titulo:"Artes para la Paz: música, danza y teatro a 700.000 jóvenes",relato:"Con el programa Artes para la Paz y una inversión superior a $693.000 millones, se llevaron arte, música, danza y teatro a más de 700.000 jóvenes en 2.900 instituciones educativas.",guion:"700.000 jóvenes con música, danza y teatro en sus colegios. La cultura no es un lujo — es la diferencia entre un joven que crea y uno que destruye.",pregunta:"¿En tu colegio o barrio hay acceso a actividades culturales o artísticas?"},
+    {num:39,anio:"2022-2026",titulo:"Colegios públicos con prejardín y jardín — primera vez en la historia",relato:"Por primera vez los colegios públicos ofrecen grados de prejardín y jardín, vinculando a 5.404 docentes para atender a más de 128.000 niños y niñas.",guion:"128.000 niños en prejardín y jardín en colegios públicos. Por primera vez en la historia. Porque la educación que llega tarde llega demasiado tarde.",pregunta:"¿Tú crees que el Estado le debería apostar desde el principio a la educación de los niños?"},
+    {num:63,anio:"2022-2026",titulo:"Se terminó el servicio militar obligatorio",relato:"Se terminó el servicio militar obligatorio. Ahora los bachilleres podrán prestar un Servicio Social Para la paz.",guion:"Se acabó la mili obligatoria. Los jóvenes ya no tienen que ir al Ejército si no quieren. Pueden servir a su comunidad en paz. Porque servir al país no debería ser un castigo.",pregunta:"¿Tú conoces a alguien que haya tenido que hacer el servicio militar obligatorio? ¿Cómo le fue?"},
+   ],
+   instruccion:"Con jóvenes empieza por la pregunta, no por el logro. Deja que respondan. El logro llega como evidencia de lo que ya intuían. Los logros 42 y 63 son los de mayor impacto en este perfil."},
+  {id:"adultos",label:"Adultos mayores",
+   dark:"#0F6E56",txt900:"#04342C",txt800:"#085041",bg:"#E1F5EE",border:"#5DCAA5",guionBorder:"#1D9E75",
+   titulo:"Adultos mayores — personas de 60 años en adelante",
+   herida:"Han trabajado toda la vida y sienten que el Estado los olvidó. Muchos no tienen pensión. Viven de lo que les dan los hijos. Desconfían de promesas que nunca se cumplen.",
+   clave:"Con adultos mayores los logros deben ser de dinero en mano, salud accesible y reconocimiento de su trayectoria. Verificables, concretos y dignos.",
+   hitos:[
+    {num:50,anio:"2022-2026",titulo:"3 millones de adultos mayores con bono de $230.000 — antes $80.000",relato:"3 millones de adultos mayores ahora reciben un bono de $230.000 mensual, cuando antes era de $80.000.",guion:"De $80.000 a $230.000 para 3 millones de adultos mayores. Casi tres veces más. Para muchos de ellos esa plata es la diferencia entre comer y no comer.",pregunta:"¿Usted o algún familiar mayor recibe algún subsidio del Estado? ¿Siente que alcanza?"},
+    {num:72,anio:"2022-2025",titulo:"Mortalidad por desnutrición infantil bajó 59,7%",relato:"La mortalidad por desnutrición infantil se redujo en un 59,7%, uno de los logros más significativos en salud pública del gobierno.",guion:"Casi 60% menos de niños muriendo por hambre. Ese es el gobierno que eligieron. No es un número — es una vida que siguió. Abuelos que verán crecer a sus nietos.",pregunta:"¿Usted ha notado que los niños de su familia o comunidad están mejor alimentados que antes?"},
+    {num:75,anio:"2022-2026",titulo:"Presupuesto de salud creció 51,4%: de $48,5 a $73,5 billones",relato:"El presupuesto de salud creció 51,4% durante el Gobierno del Cambio, pasando de $48,5 billones en 2022 a $73,5 billones para 2026.",guion:"51% más de plata para la salud de todos los colombianos. Para los adultos mayores eso significa médico más cerca, medicamentos más accesibles, hospitales con más recursos.",pregunta:"¿Usted siente que acceder a servicios de salud ha sido más fácil en los últimos años?"},
+    {num:78,anio:"2022-2026",titulo:"Más de 1.550 ambulancias entregadas a casi todos los municipios",relato:"Se han entregado más de 1.550 ambulancias a casi todos los municipios de Colombia.",guion:"1.550 ambulancias. Eso significa que cuando alguien se cae enfermo en un pueblo lejano hay cómo llevarlo al hospital. La emergencia dejó de ser sinónimo de abandono.",pregunta:"¿En su municipio o vereda había ambulancia disponible antes de este gobierno?"},
+    {num:9,anio:"2022-2026",titulo:"Mesada 14 para 244.590 pensionados de la Fuerza Pública",relato:"Se aprobó la mesada 14 para pensionados de la Fuerza Pública, beneficiando a 244.590 pensionados.",guion:"244.590 pensionados recibiendo una mesada extra. Para un adulto mayor con pensión, ese dinero adicional es dignidad — no es lujo.",pregunta:"¿Usted tiene pensión o alguien de su familia? ¿Sienten que el Estado los reconoce?"},
+   ],
+   instruccion:"Con adultos mayores habla despacio y con respeto. Empieza por el logro 50 (bono). Es el más inmediato y verificable. La pregunta debe conectar con su experiencia propia o la de alguien cercano."},
+  {id:"salud",label:"Salud",
+   dark:"#185FA5",txt900:"#042C53",txt800:"#0C447C",bg:"#E6F1FB",border:"#85B7EB",guionBorder:"#378ADD",
+   titulo:"Personas enfermas, con discapacidad y sin acceso a salud",
+   herida:"Han vivido en un sistema donde la salud es un negocio. Piden citas y no las consiguen. Los medicamentos son caros. Los hospitales no tienen dotación. Sienten que enfermar en Colombia es una desgracia.",
+   clave:"Con esta audiencia los logros deben mostrar que la salud cambió de ser mercancía a ser derecho. Cifras de inversión, de cobertura y de resultados reales.",
+   hitos:[
+    {num:74,anio:"2022-2026",titulo:"90.000 profesionales recorren el país: 11.000 Equipos Básicos de Salud",relato:"Más de 90.000 profesionales de la salud recorren las regiones del país en casi 11.000 Equipos Básicos de Salud, logrando atender a 9 millones de hogares.",guion:"9 millones de hogares atendidos por equipos de salud que van puerta a puerta. El médico dejó de ser algo que se busca — pasó a ser algo que llega.",pregunta:"¿Alguna vez un equipo de salud del gobierno llegó a su barrio o vereda?"},
+    {num:73,anio:"2022-2025",titulo:"Mortalidad materna bajó 30%: de 278 a 195 muertes",relato:"Disminución del 30% en el número de casos de mortalidad materna entre 2022 y 2025, pasando de 278 a 195 muertes.",guion:"83 madres que no murieron pariendo porque el sistema mejoró. Cada una de esas es una familia que no quedó sin mamá. Eso es lo que significa salud como derecho.",pregunta:"¿Usted o alguien cercano tuvo un parto en los últimos años? ¿Cómo fue la atención?"},
+    {num:77,anio:"2022-2026",titulo:"1.882 proyectos hospitalarios en 609 municipios — $4,4 billones",relato:"1.882 proyectos de infraestructura hospitalaria y dotación biomédica con una inversión de $4,4 billones, en 609 municipios y 32 departamentos.",guion:"1.882 hospitales y centros de salud con mejoras en 609 municipios. Colombia entera. No solo las ciudades — también los pueblos que nunca habían tenido equipos de salud.",pregunta:"¿El hospital o centro de salud de su municipio tiene mejor dotación que hace cuatro años?"},
+    {num:79,anio:"2022-2026",titulo:"$1,37 billones para producir medicamentos y vacunas en Colombia",relato:"Se avanzó hacia la soberanía sanitaria con una inversión de $1,37 billones para fortalecer la producción nacional de medicamentos, vacunas e insumos esenciales.",guion:"Colombia produciendo sus propios medicamentos y vacunas. Dejar de depender del extranjero para curar a los colombianos. Eso es soberanía de verdad.",pregunta:"¿Usted sabía que Colombia estaba invirtiendo en producir sus propios medicamentos?"},
+    {num:76,anio:"2022-2026",titulo:"$1,6 billones para recuperar el Hospital San Juan de Dios",relato:"Con una inversión de $1,6 billones, se inició la recuperación integral del Hospital San Juan de Dios, centro de la ciencia y la atención materno-infantil en Colombia.",guion:"El San Juan de Dios volvió. El hospital de todos los colombianos que estuvo cerrado décadas. Con $1,6 billones de inversión. Porque la salud pública no puede colapsar.",pregunta:"¿Usted conoce o recuerda el Hospital San Juan de Dios? ¿Qué significaría que volviera a funcionar?"},
+   ],
+   instruccion:"Con esta audiencia empieza por el logro 74 (equipos de salud puerta a puerta). Es el más cercano a la experiencia directa. La pregunta debe conectar con una vivencia propia de salud o enfermedad."},
+  {id:"indigenas",label:"P. Indígenas",
+   dark:"#854F0B",txt900:"#412402",txt800:"#633806",bg:"#FAEEDA",border:"#EF9F27",guionBorder:"#BA7517",
+   titulo:"Pueblos indígenas, afrodescendientes y comunidades étnicas",
+   herida:"Han sido ignorados por todos los gobiernos. Sus territorios han sido saqueados, sus culturas invisibilizadas y sus derechos reconocidos en el papel pero negados en la práctica.",
+   clave:"Con pueblos étnicos los logros deben mostrar territorio protegido, paz construida y reconocimiento cultural real. No asistencialismo — soberanía.",
+   hitos:[
+    {num:25,anio:"2022-2026",titulo:"Colombia: primer país en proteger 483.000 km2 de bioma amazónico",relato:"Colombia es el primer país en proteger 483.000 km2 de su bioma amazónico frente a la minería y los hidrocarburos.",guion:"483.000 kilómetros cuadrados de Amazonía protegidos de la minería. El primer país del mundo en hacerlo. Eso es defender el territorio de los pueblos que lo han cuidado durante siglos.",pregunta:"¿Cuántos de sus territorios ancestrales han sido afectados por la minería o la explotación?"},
+    {num:28,anio:"2022-2026",titulo:"942.000 hectáreas de Sierra Nevada: reserva de recursos naturales",relato:"Se declararon 942.000 hectáreas en la Sierra Nevada de Santa Marta como reserva de recursos naturales prohibiendo actividades mineras y de exploración.",guion:"942.000 hectáreas de la Sierra Nevada protegidas. Las comunidades indígenas que cuidan ese territorio llevan siglos pidiendo eso. Este gobierno lo hizo.",pregunta:"¿Su comunidad tiene reconocimiento real sobre el territorio que cuida?"},
+    {num:61,anio:"2022-2026",titulo:"Bienes de la SAE entregados a organizaciones campesinas y sociales",relato:"Le quitó los bienes de la SAE (fincas, mansiones e islotes) a políticos y testaferros y los entregó a organizaciones campesinas y sociales.",guion:"Fincas de mafiosos y testaferros convertidas en patrimonio de comunidades campesinas y sociales. La tierra robada regresando a quien la trabaja.",pregunta:"¿Usted cree que la tierra que estuvo en manos de grupos ilegales debería volver a las comunidades?"},
+    {num:22,anio:"2022-2026",titulo:"27 Zonas de Reserva Campesina y 5 Territorios Agroalimentarios — 2,1 millones de hectáreas",relato:"Se crearon 27 Zonas de Reserva Campesina y 5 Territorios Campesinos Agroalimentarios que abarcan más de 2,1 millones de hectáreas.",guion:"2,1 millones de hectáreas reconocidas como territorio campesino. El campo no es solo donde se produce — es donde vive y lucha un pueblo.",pregunta:"¿Las comunidades de su región tienen reconocimiento legal sobre el territorio que trabajan?"},
+    {num:45,anio:"2022-2026",titulo:"1.194 bienes arqueológicos repatriados y Galeón San José en investigación",relato:"Se repatriaron más de 1.194 bienes arqueológicos y se puso en marcha la investigación científica del Galeón San José, defendiendo la historia y cultura colombiana.",guion:"1.194 piezas de nuestra historia que estaban en el exterior volvieron a Colombia. Y el Galeón San José — nuestro tesoro hundido — por fin en manos de los colombianos.",pregunta:"¿Usted cree que la historia y los bienes culturales de Colombia deben pertenecerles a los colombianos?"},
+   ],
+   instruccion:"Con pueblos étnicos habla desde el territorio y la soberanía. El logro 25 (Amazonía) es el más potente para comunidades indígenas amazónicas. El 28 (Sierra Nevada) para comunidades del norte. Empieza siempre por la pregunta."},
+  {id:"escepticos",label:"Escépticos",
+   dark:"#5F5E5A",txt900:"#2C2C2A",txt800:"#444441",bg:"#F1EFE8",border:"#B4B2A9",guionBorder:"#888780",
+   titulo:"Personas escépticas — todos los gobiernos son iguales",
+   herida:"Han visto tantas promesas incumplidas que ya no creen en nada. El escepticismo es su escudo. Buscan contradicciones, no argumentos.",
+   clave:"Con escépticos solo funcionan datos verificables con fecha, cifra y fuente. Sin adjetivos — solo hechos. El logro más poderoso es el que ellos mismos pueden comprobar.",
+   hitos:[
+    {num:31,anio:"2022-2026",titulo:"Se pagó la deuda con el FMI generada por Duque: 8.000 millones de dólares",relato:"Se pagó en su totalidad la deuda de Colombia con el FMI generada en el Gobierno de Iván Duque, cercana a los 8 mil millones de dólares.",guion:"8.000 millones de dólares de deuda heredada — pagada. El FMI liquidado. Eso está en los registros públicos del Ministerio de Hacienda. No es discurso — es un balance.",pregunta:"¿Usted sabía que Colombia tenía esa deuda con el FMI? ¿Le parece importante que la hayan pagado?"},
+    {num:32,anio:"2022-2026",titulo:"Se eliminó la prima de los congresistas: $16,9 millones menos al salario",relato:"Se eliminó la prima especial de los congresistas de $16,9 millones mensuales, como un acto de equidad y responsabilidad con el país.",guion:"Los congresistas se quitaron $16,9 millones de su salario. Eso no lo hace ningún político que llegó al poder para enriquecerse. Eso se llama coherencia.",pregunta:"¿Usted cree que los políticos colombianos acostumbran quitarse privilegios? ¿Este caso le parece diferente?"},
+    {num:56,anio:"2022-2026",titulo:"Récord mundial en narco: 3.417 toneladas de cocaína incautadas",relato:"Colombia alcanzó un récord histórico en la lucha contra el narcotráfico con la incautación de 3.417 toneladas de cocaína, la cifra más alta registrada en el mundo.",guion:"3.417 toneladas de cocaína incautadas. El récord mundial. Buscable en informes de la DEA y la ONU. El gobierno que dijeron que sería blando con el narco fue el más duro en resultados.",pregunta:"¿Usted esperaba que este gobierno tuviera esos resultados en la lucha contra el narcotráfico?"},
+    {num:3,anio:"Febrero 2026",titulo:"Desempleo en 9,2% — el más bajo del siglo",relato:"En febrero de 2026 la tasa de desempleo se ubicó en 9,2%, la cifra más baja registrada en Colombia en el siglo XXI.",guion:"9,2% de desempleo. Verificable en el DANE. El número más bajo desde que hay registros confiables en Colombia. Eso no se inventa — se mide.",pregunta:"¿Qué tendría que pasar para que usted reconociera que este gobierno hizo algo bien?"},
+    {num:30,anio:"2025",titulo:"La Bolsa de Colombia cerró 2025 como una de las más rentables del mundo",relato:"La Bolsa de Colombia cerró 2025 como una de las más rentables del mundo.",guion:"La Bolsa de Valores de Colombia entre las más rentables del mundo en 2025. Eso se puede verificar en Bloomberg, en Reuters, en cualquier fuente financiera internacional.",pregunta:"¿Usted revisó alguna vez la rentabilidad de la Bolsa de Colombia este año?"},
+   ],
+   instruccion:"Con escépticos nunca defiendas al gobierno. Presenta el dato y pregunta. Deja que ellos respondan. El logro 32 (prima de congresistas) es el más difícil de rebatir — porque va contra el interés propio del político."},
+  {id:"clasemedia",label:"Clase media",
+   dark:"#185FA5",txt900:"#042C53",txt800:"#0C447C",bg:"#E6F1FB",border:"#85B7EB",guionBorder:"#378ADD",
+   titulo:"Clase media urbana — profesionales, empleados, pequeños empresarios",
+   herida:"Sienten que pagan impuestos y no reciben nada. Temen que el cambio los afecte más que a los ricos. Valoran la estabilidad económica y la gestión verificable.",
+   clave:"Con clase media los logros deben mostrar economía sólida, moneda fuerte, oportunidades de negocio y servicios públicos mejorados. Gestión, no ideología.",
+   hitos:[
+    {num:33,anio:"2022-2026",titulo:"El dólar es $700 más barato que hace 4 años",relato:"El dólar es $700 más barato que hace 4 años pues nuestra moneda se ha fortalecido.",guion:"El peso colombiano se fortaleció. El dólar bajó $700 frente a hace cuatro años. Eso significa que importar es más barato, que viajar cuesta menos, que las deudas en dólares pesan menos.",pregunta:"¿Usted ha notado el efecto del dólar más bajo en su vida cotidiana o en su negocio?"},
+    {num:35,anio:"2022-2026",titulo:"Beneficio directo a más de 66.000 mipymes",relato:"Se benefició directamente a más de 66.000 mipymes, impulsando su crecimiento, productividad y sostenibilidad.",guion:"66.000 pequeñas y medianas empresas con apoyo directo del gobierno. Eso no es un subsidio — es inversión en la columna vertebral de la economía colombiana.",pregunta:"¿Usted tiene o conoce a alguien con una pequeña empresa? ¿Recibieron algún apoyo en estos años?"},
+    {num:36,anio:"2022-2026",titulo:"$3,3 billones en conectividad — la mayor inversión de la última década",relato:"Inversión histórica de $3,3 billones en conectividad, la más alta de la última década.",guion:"$3,3 billones en internet y conectividad. La mayor inversión del siglo en este rubro. Para los negocios digitales, para el trabajo remoto, para todos los que dependen de la conexión.",pregunta:"¿Usted trabaja o hace negocios en línea? ¿Ha notado mejoras en la conectividad en los últimos años?"},
+    {num:37,anio:"2022-2026",titulo:"Cobertura de internet subió 14,4%: de 59,5% a 73,9%",relato:"Se aumentó un 14,4% la cobertura en internet pasando de 59,5% a 73,9%.",guion:"14 puntos más de cobertura de internet en todo el país. De 6 de cada 10 colombianos conectados a casi 8 de cada 10. Eso es infraestructura para el futuro.",pregunta:"¿En su municipio o barrio hay mejor internet que hace cuatro años?"},
+    {num:34,anio:"2022-2026",titulo:"$4,1 billones en financiamiento para leasing y modernización productiva",relato:"Movilización de más de $4,1 billones en financiamiento para leasing, modernización e inversión productiva.",guion:"$4,1 billones para que las empresas colombianas se modernicen. Eso es apostar por la producción nacional — no por la importación de todo.",pregunta:"¿Usted cree que Colombia debería producir más de lo que consume o seguir importando?"},
+   ],
+   instruccion:"Con clase media usa lenguaje económico y de gestión. Evita la retórica ideológica. El logro 33 (dólar) y el 35 (mipymes) son los de mayor impacto inmediato en este perfil."},
+  {id:"victimas",label:"Víctimas",
+   dark:"#993C1D",txt900:"#4A1B0C",txt800:"#712B13",bg:"#FAECE7",border:"#F0997B",guionBorder:"#D85A30",
+   titulo:"Víctimas del conflicto armado y la violencia estatal",
+   herida:"Han esperado décadas por verdad, justicia y reparación. Muchos nunca recibieron nada. Sienten que la paz fue negociada pero ellos quedaron afuera.",
+   clave:"Con víctimas el logro debe llegar como reconocimiento, no como estadística. Cada cifra tiene una familia detrás. El facilitador lo dice despacio.",
+   hitos:[
+    {num:59,anio:"2022-2026",titulo:"El gobierno que más ha reparado a víctimas: 6,7 billones en indemnizaciones",relato:"Somos el gobierno que más ha reparado a las víctimas del conflicto armado, llegando a más de 6,7 billones de pesos en indemnizaciones.",guion:"6,7 billones pagados en reparaciones a víctimas del conflicto. El número más alto en la historia de Colombia. Porque reconocer el daño no basta — hay que pagar lo que se debe.",pregunta:"¿Usted o su familia han recibido alguna reparación o reconocimiento del Estado por lo que vivieron?"},
+    {num:62,anio:"2022-2026",titulo:"Jóvenes en Paz: 30.000 jóvenes alejados de la guerra",relato:"Se implementó el programa Jóvenes en Paz que hoy aleja a más de 30.000 chicos de la guerra.",guion:"30.000 jóvenes que no van a convertirse en los victimarios del mañana. Porque la mejor reparación que le puedes dar a una víctima es que no haya más víctimas.",pregunta:"¿En su comunidad hay jóvenes en riesgo de entrar a grupos armados?"},
+    {num:51,anio:"2022-2026",titulo:"Se garantizó y protegió el derecho a la protesta",relato:"Se garantizó y protegió el derecho a la protesta, como uno de los pilares de la democracia real.",guion:"En este gobierno nadie fue asesinado por protestar. Eso no se puede decir de todos los gobiernos anteriores. La protesta dejó de ser peligrosa — se convirtió en un derecho real.",pregunta:"¿Usted o alguien que conoce fue afectado por protestar en gobiernos anteriores?"},
+    {num:56,anio:"2022-2026",titulo:"Récord mundial: 3.417 toneladas de cocaína incautadas",relato:"Colombia alcanzó un récord histórico en la lucha contra el narcotráfico con la incautación de 3.417 toneladas de cocaína.",guion:"El narco que financió la guerra que los victimizó golpeado como nunca. 3.417 toneladas incautadas. Cada tonelada que no llega al mercado es menos plata para los grupos que hacen daño.",pregunta:"¿Usted cree que atacar el narcotráfico ayuda a que haya menos violencia en los territorios?"},
+    {num:61,anio:"2022-2026",titulo:"Bienes de mafiosos entregados a organizaciones sociales y campesinas",relato:"Le quitó los bienes de la SAE a políticos y testaferros y los entregó a organizaciones campesinas y sociales.",guion:"Las fincas de los que financiaron el conflicto ahora son de las comunidades que sufrieron ese conflicto. Eso es justicia con tierra y con hechos.",pregunta:"¿Usted cree que quienes financiaron la guerra deberían compensar con sus bienes a quienes sufrieron esa guerra?"},
+   ],
+   instruccion:"Con víctimas habla despacio. Empieza por el logro 59 (reparaciones). Es el reconocimiento más directo. La pregunta mayéutica no debe reabrir heridas — debe invitar a reconocer el cambio."},
+  {id:"medioambiente",label:"Medio ambiente",
+   dark:"#3B6D11",txt900:"#173404",txt800:"#27500A",bg:"#EAF3DE",border:"#97C459",guionBorder:"#639922",
+   titulo:"Personas que se preocupan por el medio ambiente y el futuro del planeta",
+   herida:"Sienten que Colombia destruye su naturaleza por plata. Ven la deforestación, la minería ilegal y el cambio climático como amenazas reales que nadie toma en serio.",
+   clave:"Con esta audiencia los logros deben mostrar hechos ambientales verificables y liderazgo internacional. Colombia actuando — no solo hablando.",
+   hitos:[
+    {num:24,anio:"2022-2026",titulo:"Deforestación bajó 39% — 32% en la Amazonía",relato:"Se logró una reducción acumulada del 39% en la deforestación nacional (32% en la Amazonía), protegiendo el pulmón del mundo para las próximas generaciones.",guion:"39% menos deforestación en Colombia. En la Amazonía, 32% menos. Eso no es una meta — es un hecho medido por satélite. El pulmón del mundo respirando mejor.",pregunta:"¿Usted ha notado cambios en la cobertura de bosques o en los ríos de su región en los últimos años?"},
+    {num:25,anio:"2022-2026",titulo:"Primer país en proteger 483.000 km2 de bioma amazónico",relato:"Colombia es el primer país en proteger 483.000 km2 de su bioma amazónico frente a la minería y los hidrocarburos.",guion:"483.000 kilómetros cuadrados de Amazonía protegidos de la minería para siempre. Colombia fue el primer país del mundo en hacer eso. Eso es liderazgo ambiental de verdad.",pregunta:"¿Usted sabía que Colombia tomó esa decisión histórica sobre la Amazonía?"},
+    {num:29,anio:"2022",titulo:"Organizó con total éxito la COP16 en Cali",relato:"Organizó con total éxito en Cali la COP16, el evento ambiental más importante del mundo.",guion:"El evento ambiental más importante del mundo se hizo en Colombia. En Cali. Con total éxito. Eso le dijo al mundo que Colombia no es solo biodiversidad — es también liderazgo ambiental.",pregunta:"¿Usted sabe qué fue la COP16 y qué significó para Colombia?"},
+    {num:80,anio:"2022-2026",titulo:"La energía solar supera al carbón en generación eléctrica",relato:"Se logró que la energía solar supere al carbón en la generación anual de electricidad.",guion:"En Colombia la energía solar ya produce más que el carbón. Eso no es una promesa de transición energética — es la transición ya ocurriendo.",pregunta:"¿Usted usa o ha visto paneles solares en su comunidad o región?"},
+    {num:26,anio:"2022-2026",titulo:"USD 1 millón anual por 30 años para el Parque Chiribiquete",relato:"Se aseguró un financiamiento de USD 1 millón anual por 30 años para el Parque Chiribiquete, garantizando su conservación perpetua.",guion:"Chiribiquete protegido para los próximos 30 años con financiamiento garantizado. El patrimonio natural de Colombia no es una promesa — es un contrato.",pregunta:"¿Usted conoce el Parque Chiribiquete? ¿Cree que proteger esos lugares es una prioridad?"},
+   ],
+   instruccion:"Con esta audiencia empieza por el logro 24 (deforestación) o el 80 (energía solar). Son los más verificables y los que más impactan en la percepción de acción real. La pregunta debe conectar con lo que ven en su entorno."},
+  {id:"indecisos",label:"Indecisos",
+   dark:"#A32D2D",txt900:"#501313",txt800:"#791F1F",bg:"#FCEBEB",border:"#F09595",guionBorder:"#E24B4A",
+   titulo:"Personas indecisas — quieren decidir bien pero no saben por quién",
+   herida:"No están contra el cambio — están confundidas. Escuchan argumentos de todos lados y no saben qué creer. Necesitan un criterio claro para evaluar.",
+   clave:"Con indecisos los logros funcionan como criterio de evaluación, no como argumento de convencimiento. La idea es darles herramientas para decidir solos.",
+   hitos:[
+    {num:4,anio:"2025",titulo:"Pobreza multidimensional bajó a 9,9% — primer dígito de la historia",relato:"En 2025 se bajó la pobreza multidimensional a 9,9%, alcanzando por primera vez un solo dígito y sacando a 793.000 colombianos de la pobreza en un año.",guion:"793.000 colombianos salieron de la pobreza en un año. Pobreza multidimensional en un solo dígito por primera vez en la historia. Eso es verificable en el DANE.",pregunta:"Si tuvieras que evaluar un gobierno por un solo número, ¿cuál sería? ¿Este número te dice algo?"},
+    {num:3,anio:"Febrero 2026",titulo:"Desempleo más bajo del siglo: 9,2%",relato:"En febrero de 2026 la tasa de desempleo se ubicó en 9,2%, la cifra más baja registrada en Colombia en el siglo XXI.",guion:"9,2% de desempleo. El más bajo del siglo. Verificable en el DANE, en la prensa, en cualquier fuente. Ese número existía antes del gobierno y existe hoy — se puede comparar.",pregunta:"Si tuvieras que pedirle una prueba verificable de gestión a un gobierno, ¿cuál pedirías?"},
+    {num:31,anio:"2022-2026",titulo:"Se pagó la deuda con el FMI: 8.000 millones de dólares",relato:"Se pagó en su totalidad la deuda de Colombia con el FMI generada en el Gobierno de Iván Duque, cercana a los 8 mil millones de dólares.",guion:"La deuda con el FMI pagada completamente. Eso está en los registros del Ministerio de Hacienda, en el FMI mismo, en cualquier fuente financiera internacional. No es discurso.",pregunta:"¿Cuándo fue la última vez que Colombia le pagó una deuda grande a un organismo internacional en su totalidad?"},
+    {num:24,anio:"2022-2026",titulo:"Deforestación bajó 39% — medida por satélite",relato:"Se logró una reducción acumulada del 39% en la deforestación nacional (32% en la Amazonía), protegiendo el pulmón del mundo para las próximas generaciones.",guion:"39% de reducción en deforestación. Medido por satélite — no por el gobierno. Por Global Forest Watch, por fuentes internacionales independientes. Eso no se puede inventar.",pregunta:"¿Usted busca fuentes independientes para verificar lo que dicen los gobiernos? ¿Qué encontraría si busca este dato?"},
+    {num:50,anio:"2022-2026",titulo:"3 millones de adultos mayores: de $80.000 a $230.000 mensuales",relato:"3 millones de adultos mayores ahora reciben un bono de $230.000 mensual, cuando antes era de $80.000.",guion:"Triplicaron el bono para 3 millones de adultos mayores. Eso se verifica en el banco, en el extracto, en la vida real de 3 millones de familias. No en un comunicado.",pregunta:"¿Qué te faltaría saber o verificar para poder tomar tu propia decisión con confianza?"},
+   ],
+   instruccion:"Con indecisos no presiones — acompaña. Presenta el dato, deja que lo cuestionen y responde con la fuente verificable. Termina siempre con la pregunta de cierre: ¿qué te faltaría saber? Esa respuesta te dice exactamente qué logro usar después."},
+];
+const tabs = document.getElementById('tabs');
+const panels = document.getElementById('panels');
+// Renombrar tabs para voz ciudadana
+const LABELS_CIUDADANO = {
+  trabajadores: '👷 Si trabajas',
+  mujeres:      '👩 Si eres mujer',
+  campesinos:   '🌾 Si eres del campo',
+  jovenes:      '🎓 Si eres joven',
+  mayores:      '👴 Si eres mayor',
+  victimas:     '🕊️ Si eres víctima',
+  salud:        '🏥 Por la salud',
+  educacion:    '📚 Por la educación',
+  empresarios:  '💼 Si tienes empresa',
+  medioambiente:'🌿 Por el planeta',
+  indecisos:    '🤔 Si aún dudas',
+};
+AUD.forEach((a,i)=>{
+  const labelCiudadano = LABELS_CIUDADANO[a.id] || a.label;
+  const btn = document.createElement('button');
+  btn.className='tab-btn'+(i===0?' active':'');
+  btn.textContent=labelCiudadano;
+  btn.onclick=()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('visible'));
+    btn.classList.add('active');
+    document.getElementById('p-'+a.id).classList.add('visible');
+    document.getElementById('p-'+a.id).scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+  tabs.appendChild(btn);
+  const panel = document.createElement('div');
+  panel.className='panel'+(i===0?' visible':'');
+  panel.id='p-'+a.id;
+  const hitosHTML = a.hitos.map(h=>`
+    <div class="hito">
+      <div class="hito-head">
+        <div class="hito-badge" style="background:${a.dark};color:#fff">${h.num}</div>
+        <div>
+          <div class="hito-titulo">${h.titulo}</div>
+          <div class="hito-anio">${h.anio}</div>
+        </div>
+      </div>
+      <div class="hito-body">
+        <div class="hito-relato">${h.relato}</div>
+        <div class="hito-guion" style="background:${a.bg};border-color:${a.guionBorder};color:${a.txt900}">«${h.guion}»</div>
+        <div class="hito-preg" style="background:${a.bg};border-color:${a.border}">
+          <strong style="color:${a.dark}">Una pregunta para reflexionar</strong>
+          <span style="color:${a.txt800}">${h.pregunta}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  panel.innerHTML=`
+    <div class="aud-header" style="background:${a.bg};border-color:${a.border}">
+      <div class="aud-eyebrow" style="color:${a.dark}">Logros que me importan</div>
+      <div class="aud-title" style="color:${a.txt900}">${a.titulo}</div>
+      <div class="aud-herida" style="color:${a.txt800}">${a.herida}</div>
+    </div>
+    <div class="hitos">${hitosHTML}</div>
+    <div class="instruccion" style="background:${a.bg};border-color:${a.border}">
+      <div class="inst-label" style="color:${a.dark}">¿Por qué comparto esto?</div>
+      <div class="inst-body" style="color:${a.txt800}">Estos logros son verificables. Puedes buscarlos en el DANE, en la prensa, en los registros del gobierno. No te pido que me creas a mí — te pido que los compruebes. Y si te convencen tanto como a mí, compártelos con alguien que lo necesite escuchar.</div>
+    </div>
+  `;
+  panels.appendChild(panel);
+});
+</script>
+</body>
+</html>
